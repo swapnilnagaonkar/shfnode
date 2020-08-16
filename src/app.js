@@ -4,6 +4,8 @@ const hbs = require('hbs')
 
 const app = express()
 
+const port = process.env.PORT || 3000
+
 app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname,'../templates/views'))
 hbs.registerPartials(path.join(__dirname,'../templates/partials'))
@@ -14,6 +16,6 @@ app.get('', (request, response) => {
 })
 
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server is up on port 3000')
 })
